@@ -15,10 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//contoh terlebih dahulu
-Route::get('/admin', function () {
-    return 'Admin Page';
-})->name('admin');
+
 
 
 
