@@ -61,6 +61,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    
     protected function mapAdminRoutes()
     {
         Route::middleware('web','auth','role:admin')
