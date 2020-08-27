@@ -32,3 +32,7 @@
 <script src="{{ asset('assets/dist/js/pages/dashboard.js')}} "></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/dist/js/demo.js')}} "></script>
+<!--Data Table-->
+<script type="text/javascript"  src=" https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript"  src=" https://cdn.datatables.net/buttons/1.2.4/js/dataTables.buttons.min.js"></script>
+@stack('scripts')
