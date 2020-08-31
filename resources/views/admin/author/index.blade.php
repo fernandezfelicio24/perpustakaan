@@ -4,7 +4,8 @@
   
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Data Penulis</h3>
+            <h3 class="card-title">Data Penulis &nbsp &nbsp</h3>
+        <a href="{{route('admin.author.create')}}" class="btn btn-primary">Tambah Penulis</a>
            
         </div>
         <div class="car-body">
