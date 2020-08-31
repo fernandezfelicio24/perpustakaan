@@ -14,7 +14,8 @@
                     <tr>
                       <th>ID</th>
                       <th>Nama</th>
-                      
+                      <th>Action</th>
+                   
                     </tr>
                     </thead>
             </table>
@@ -30,8 +31,9 @@
                         processing: true, 
                         serviceSide:true,
                          ajax: '{{ route('admin.author.data') }}',
-                        columns: [ { data: 'id'},
-                                    { data: 'name'}
+                        columns: [ { data: 'DT_RowIndex', orderable : false, searchable : false},
+                                    { data: 'name'},
+                                    { data: 'action'}
                                     ]
                         });
                     });
