@@ -11,9 +11,7 @@ class DataController extends Controller
        // return datatables()->of(Author::query())->toJson();
        $authors = Author::orderBy('name','ASC');
        return datatables()->of($authors)
-                ->addColumn('action', function(Author $author){
-                    return '   <a href="'.route('admin.author.edit',$author). '" class="btn btn-warning">Edit</a>';
-                })
+                ->addColumn('action', 'admin.author.action')
                 ->addIndexColumn()
                 ->toJson();
 
