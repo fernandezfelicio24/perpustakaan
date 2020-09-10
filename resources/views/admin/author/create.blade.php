@@ -22,6 +22,7 @@
                 <input type="text" name="name" class="form-control" id="nama1" placeholder="Masukan Nama Penulis" value="{{old('name')}}">
                   @error('name')
                 <span class="help-block">{{$message}}</span>
+
                   @enderror
 
               <!-- /.card-body -->
