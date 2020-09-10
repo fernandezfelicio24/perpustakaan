@@ -15,7 +15,7 @@
             <!-- form start -->
         <form role="form" action="{{route('admin.author.store') }}" method="POST">
                 {{ csrf_field() }}
-              <div class="card-body">
+        
               
                 <div class="form-group @error('name') has-error @enderror">
                   <label for="nama1">Nama</label>
@@ -23,7 +23,7 @@
                   @error('name')
                 <span class="help-block">{{$message}}</span>
                   @enderror
-               
+
               <!-- /.card-body -->
 
               <div class="card-footer">

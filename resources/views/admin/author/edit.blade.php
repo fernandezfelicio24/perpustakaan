@@ -16,15 +16,17 @@
         <form role="form" action="{{route('admin.author.update', $author) }}" method="POST">
                 {{ csrf_field() }}
                 @method("PUT")
-              <div class="card-body">
-                <div class="form-group @error('name') has-error @enderror ">
-                  <label for="nama1">Nama</label>
-                <input type="text" name="name" class="form-control" id="nama1" placeholder="Masukan Nama Penulis" value="{{ old('name') ?? $author->name}}">
-                @error('name')
-                <span class="help-block">{{$message}}</span>
-                  @enderror
-                </div>
-              
+            
+                <div class="card-body">
+                  <div class="form-group @error('name') has-error @enderror ">
+                        <label for="nama1">Nama</label>
+                  <input type="text" name="name" class="form-control" id="nama1" placeholder="Masukan Nama Penulis" value="{{ old('name') ?? $author->name}}">
+                        @error('name')
+                        <span class="help-block">{{$message}}</span>
+                       @enderror
+              </div>
+               
+           
                
               <!-- /.card-body -->
 
