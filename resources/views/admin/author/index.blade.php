@@ -9,8 +9,15 @@
            
         </div>
         <div class="car-body">
-         
-            
+            @if (session('success'))
+                <div class="alert alert-success">{{session('success')}}</div>
+            @endif
+            @if (session('info'))
+                <div class="alert alert-info">{{session('info')}}</div>
+            @endif
+            @if (session('danger'))
+                <div class="alert alert-danger">{{session('danger')}}</div>
+            @endif
             <table id="dataTable" class="table table-bordered table-hover">
                 <thead>
                     <tr>
@@ -33,12 +40,10 @@
 @endsection
 
 @push('scripts')
-<script src="{{asset('assets/plugins/bs-notify.min.js')}}"></script>
-@include('admin.templates.partials.alerts')
-
     <script>
        $(function () {
                     $('#dataTable').DataTable({ 
+                        responsive: true,
                         processing: true, 
                         serviceSide:true,
                          ajax: '{{ route('admin.author.data') }}',
