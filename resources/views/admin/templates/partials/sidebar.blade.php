@@ -25,7 +25,7 @@
               <i class="nav-icon fas fa-user"></i>
               <p>Penulis</p>
             </a>
-            <a href="#" class="nav-link">
+            <a href="{{route('admin.book.index')}}" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>Buku</p>
             </a>
