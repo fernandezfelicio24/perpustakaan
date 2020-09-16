@@ -1,7 +1,11 @@
 @extends('admin.templates.default')
 
 @section('content')
+@push('data_tables')
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
   
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+@endpush
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Data Penulis &nbsp &nbsp</h3>
@@ -44,8 +48,7 @@
 @endsection
 
 @push('scripts')
-<script src="{{asset('assets/plugins/bs-notify.min.js')}}"></script>
-@include('admin.templates.partials.alerts')
+
     <script>
        $(function () {
                     $('#dataTable').DataTable({ 
