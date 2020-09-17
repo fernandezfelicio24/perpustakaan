@@ -8,27 +8,31 @@
 
 </blockquote>
 <div class="div row">
-   @for ($i = 0; $i < 10; $i++)
+    @foreach ($books as $databook)
     <div class="col s12 m6">
         <div class="card horizontal hoverable">
             <div class="card-image">
-            <img src="https://lorempixel.com/100/190/nature/6">
+            <img src="{{$databook->getcover()}}" height="200px">
             </div>
             <div class="card-stacked">
             <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.</p>
+            <h6>{{Str::limit($databook->title, 30)}}</h6>
+            <p>{{Str::limit($databook->description,100)}}</p>
             </div>
             <div class="card-action">
-                <a href="#">This is a link</a>
+                <a href="#">Emprestar Livro</a>
             </div>
             </div>
         </div>
     </div>
-   @endfor
+    @endforeach
+ 
 
 </div>
 {{-- pagination --}}
-<ul class="pagination center">
+{{$books->links()}}
+
+{{-- <ul class="pagination center">
     <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
     <li class="active"><a href="#!">1</a></li>
     <li class="waves-effect"><a href="#!">2</a></li>
@@ -36,6 +40,6 @@
     <li class="waves-effect"><a href="#!">4</a></li>
     <li class="waves-effect"><a href="#!">5</a></li>
     <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-  </ul>
+  </ul> --}}
             
 @endsection
