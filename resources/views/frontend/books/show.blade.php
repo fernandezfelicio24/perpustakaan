@@ -2,6 +2,7 @@
 
 
 @section('content')
+<h4>Detailhes dos Livros</h4>
 <div class="col s12 m12">
         <div class="card horizontal hoverable">
             {{-- <div class="card-image"> --}}
@@ -26,5 +27,32 @@
                     </div>
             </div>
         </div>
-</div>    
+</div> 
+<h5>Outros Livros do Escritor {{$book->author->name}} ...</h5>   
+<div class="div row">
+  
+    @foreach ($book->author->books->shuffle()->take(4) as $databook)
+    <div class="col s12 m6">
+        <div class="card horizontal hoverable">
+            <div class="card-image">
+            <img src="{{$databook->getcover()}}" height="200px">
+            </div>
+            <div class="card-stacked">
+            <div class="card-content">
+            <h6>
+            <a href="{{route('book.show',$databook)}}">{{Str::limit($databook->title, 30)}}</a>
+            </h6>
+            <p>{{Str::limit($databook->description,100)}}</p>
+            </div>
+            <div class="card-action">
+                <a href="#" class="btn red accent-1 right waves-effect waves-light">Emprestar Livro</a>
+            </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
+ 
+
+</div>
+
 @endsection
