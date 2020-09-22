@@ -22,8 +22,12 @@
                         </p>
                     </div>
                     <div class="card-action">
-                        <input type="submit" value="Emprestar Livro" class="btn red accent-1 right waves-effect waves-light">
-                
+                        <form action="{{route('book.borrow',$book)}}" method="POST">
+                            @csrf
+           
+                            <input type="submit" value="Emprestar Livro" class="btn red accent-1 right waves-effect waves-light">
+                        </form>
+                        
                     </div>
             </div>
         </div>
@@ -45,7 +49,13 @@
             <p>{{Str::limit($databook->description,100)}}</p>
             </div>
             <div class="card-action">
-                <a href="#" class="btn red accent-1 right waves-effect waves-light">Emprestar Livro</a>
+                
+                <form action="{{route('book.borrow',$databook)}}" method="POST">
+                    @csrf
+   
+                    <input type="submit" value="Emprestar Livro" class="btn red accent-1 right waves-effect waves-light">
+                </form>
+                
             </div>
             </div>
         </div>
