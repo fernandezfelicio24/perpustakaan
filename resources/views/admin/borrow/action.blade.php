@@ -1,27 +1,28 @@
 
-<button href="#" class="btn btn-info" id="delete">Pengembalian</button>
+
+<button href="{{route('admin.borrow.return',$model)}}" class="btn btn-info" id="return">Pengembalian Buku</button>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
  <script>
-    $('button#delete').on('click', function(e){
+    $('button#return').on('click', function(e){
         e.preventDefault();
         var href = $(this).attr('href');
         Swal.fire({
-        title: 'Apakah kamu yakin hapus data ini?',
-        text: "Data yang sudah hapus tidak bisa dikembalikan!",
+        title: 'Apakah kamu yakin data nya sudah benar?',
+        text: "Pastikan  bawah data & buku yang dikembalikan sama",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yahh, Hapus Saja!'
+        confirmButtonText: 'Yahh, Betul Data sudah dicek!'
         }).then((result) => {
         if (result.value) {
-            document.getElementById('deleteForm').action = href;
-             document.getElementById('deleteForm').submit();
+            document.getElementById('returnForm').action = href;
+             document.getElementById('returnForm').submit();
                 Swal.fire(
-                'Terhapus!',
-                'Data kamu berhasil dihapus.',
+                'Dikembalikan!',
+                'Buku sudah dikembalikan',
                 'success'
                 )
             }
