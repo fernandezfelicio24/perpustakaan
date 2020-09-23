@@ -9,7 +9,9 @@ use Carbon\Carbon;
 class BorrowController extends Controller
 {
     public function index(){
-        return view('admin.borrow.index');
+        return view('admin.borrow.index',[
+            'title' => 'Data Buku yang dipinjam',
+        ]);
     }
 
     public function returnBook(Request $request, BorrowHistory $borrowHistory){
