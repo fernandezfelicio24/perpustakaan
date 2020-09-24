@@ -7,5 +7,5 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    
 
-     <title>HomePage</title>
+     <title>{{$title ?? 'Biblioteca'}}</title>
 </head>

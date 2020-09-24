@@ -12,12 +12,14 @@ class BookController extends Controller
         //$books = Book::get();
         $books = Book::paginate(10);
         return view('frontend.books.index',[
+            'title' => 'Bibilioteca Xanana Gusmao',
             'books' => $books,
         ]);
     }
 
     public function show(Book $book){
         return view('frontend.books.show',[
+            'title' => $book->title,
             'book' => $book,
         ]);
     }
