@@ -23,7 +23,13 @@ class DataController extends Controller
 
     public function books(){
         // return datatables()->of(Author::query())->toJson();
-        $books = Book::orderBy('title','ASC');
+        
+        //cara lain untuk masaLah n+1(query yang berulang)
+       // $books = Book::with('author')->orderBy('title','ASC');
+
+        //pake lazy loads untuk masalah n+1
+        $books = Book::orderBy('title','ASC')->get();
+        $books->load('author');
         return datatables()->of($books)
                 ->addColumn('author',function(Book $model){
                     return $model->author->name;
@@ -41,7 +47,8 @@ class DataController extends Controller
 
      public function borrows(){
 
-        $borrows = BorrowHistory::isBorrowed()->latest();
+        $borrows = BorrowHistory::isBorrowed()->latest()->get();
+        $borrows->load('user','book');
         return datatables()->of($borrows)
              ->addColumn('user',function(BorrowHistory $model){
                     return $model->user->name;
