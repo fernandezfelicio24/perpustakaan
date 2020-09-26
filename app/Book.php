@@ -29,4 +29,11 @@ class Book extends Model
         
     }
 
+    public function scopeIsStillBorrow($query, $bookid){
+
+        return $query->where('books.id',$bookid)
+                     ->where('returned_at', null)
+                    ->count()> 0 ;
+    }
+
 }
