@@ -15,7 +15,7 @@ class AddReturnedAtAndReceiverUserIdOnBorrowHistoryTable extends Migration
     {
         Schema::table('borrow_history', function (Blueprint $table) {
             $table->dateTime('returned_at')->nullable()->default(null)->after('book_id');
-            $table->bigInteger('admin_id')->nullabel()->default(null)->afeter('returned_at');
+            $table->bigInteger('admin_id')->nullable()->default(null)->afeter('returned_at');
         });
     }
 

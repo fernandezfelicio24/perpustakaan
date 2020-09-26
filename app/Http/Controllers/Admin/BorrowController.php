@@ -20,6 +20,7 @@ class BorrowController extends Controller
             'admin_id'   => auth()->id(),
         ]);
 
+        $borrowHistory->book()->increment('qty');
         return redirect()->back()->with('success','Buku dekembalikan');
     }
 }
