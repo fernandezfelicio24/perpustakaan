@@ -8,7 +8,7 @@
 @endpush
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Laporan Buku Terlaris &nbsp &nbsp</h3>
+            <h3 class="card-title">Laporan User Teraktif &nbsp &nbsp</h3>
            
         </div>
         <div class="car-body">
@@ -25,15 +25,12 @@
             <table id="dataTable" class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>Judul</th>
-                      <th>Deskripsi</th>
-                      <th>Jumlah Buku</th>
-                      <th>Total Dipinjam</th>
-                      <th>Penulis</th>
-                      <th>Sampul</th>
-                  
-                   
+                      <th>NO</th>
+                      <th>Nama</th>
+                      <th>Email</th>
+                      <th>Jumlah Peminjaman</th>
+                      <th>Bergabung</th>
+                     
                     </tr>
                     </thead>
 
@@ -44,25 +41,22 @@
                                 $page = request('page');
                             }
                             $no = (10 * $page)- (10-1);
-                        @endphp
-                        @foreach ($books as $databook)
+                         @endphp
+                        @foreach ($users as $datauser)
                         <tr>
                             <td>{{$no++}}</td>
-                            <td>{{$databook->title}}</td>
-                            <td>{{$databook->description}}</td>
-                            <td>{{$databook->qty}}</td>
-                            <td>{{$databook->borrowed_count}}</td>
-                            <td>{{$databook->author->name}}</td>
-                            
-                            <td>
-                            <img src="{{$databook->getCover()}}" height="150px" alt="{{$databook->title}}">
-                            </td>
+                            <td>{{$datauser->name}}</td>
+                            <td>{{$datauser->email}}</td>
+                          
+                            <td>{{$datauser->borrow_count}}</td>
+                            {{-- <td>{{ \Carbon\Carbon::parse($datauser['created_at'])->diffForHumans() }}</td> --}}
+                            <td>{{$datauser->created_at->diffForHumans()}}</td>
                         </tr>
                         @endforeach
                        
                     </tbody>
             </table>
-            {{$books->links()}}
+            {{$users->links()}}
         </div>
         
     </div>

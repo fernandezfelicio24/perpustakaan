@@ -20,26 +20,53 @@
          
          
           <li class="nav-header">MAIN NAVIGATION</li>
-          <li class="nav-item">
-          <a href="{{route('admin.author.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
-              <p>Penulis</p>
-            </a>
-            <a href="{{route('admin.book.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>Buku</p>
-            </a>
-            <a href="{{route('admin.borrow.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>Daftar Peminjaman Buku</p>
-            </a>
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>User</p>
-            </a>
-          </li>
+         
+          <ul data-widget="treeview">
+            <li>
+                <a href="{{route('admin.author.index')}}" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p>Penulis</p>
+              </a>
+           </li>
+            <li >
+            
+              <a href="{{route('admin.book.index')}}" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>Buku</p>
+              </a>
+            </li>
+            <li>
+              <a href="{{route('admin.borrow.index')}}" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>Daftar Peminjaman Buku</p>
+              </a>
+            </li>
+            
           
-        
+            <li class="treeview">
+              <a href="#">Laporan</a>
+              <ul class="treeview-menu">
+                <li>
+                  <a href="{{route('admin.report.top-book')}}" class="nav-link">
+                    <i class="nav-icon fas fa-book"></i>
+                    <p>Daftar Buku Favorit</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{route('admin.report.top-user')}}" class="nav-link">
+                    <i class="nav-icon fas fa-book"></i>
+                    <p>Daftar Pengguna Teraktif </p>
+                  </a>
+                </li>
+              </ul>
+
+            <li>
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>User</p>
+              </a>
+            </li>
+          </ul>
          
         </ul>
       </nav>
